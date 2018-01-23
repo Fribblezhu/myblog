@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh">
+<body>
+<div class="inner profile-inner" th:fragment="user" >
+    <div  class="base-info profile-block" th:if="${userInfo==null}">
+        <img id="avatar_visitor" src="/image/avatar.jpg" class="my-avatar" />
+        <div class="clean-both"></div>
+        <h2 id="name_visitor">游客,欢迎!</h2>
+        <h3 id="title_visitor" style="margin: 1.6em 0em">懂代码,更懂你,快加入吧!</h3>
+        <a id="login_visitor" target="_blank" th:href="'/login'" >登录</a>
+    </div>
+    <div class="profile-block social-links" th:if="${userInfo==null}">
+        <table>
+            <tr>
+                <td>
+                    <a href="https://github.com" target="_blank" title="github" class="tooltip">
+                        <i class="fa fa-github"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="http://git.oschina.net" target="_blank" title="OSC" class="tooltip">
+                        <i class="fa fa-git"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="https://t.me/joinchat" target="_blank" title="telegram群组" class="tooltip">
+                        <i class="fa fa-telegram"></i>
+                    </a>
+                </td>
+
+                <td>
+                    <a href="https://plus.google.com" target="_blank" title="google+" class="tooltip">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="#" target="_blank" title="rss" class="tooltip">
+                        <i class="fa fa-rss"></i>
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="base-info profile-block" th:if="${userInfo!=null}">
+        <img id="avatar" th:src="${userInfo.avatar}" class="my-avatar" />
+        <!--  <div class="profile"></div>-->
+        <div class="clean-both"></div>
+        <h2 id="name" th:inline="text">[[${userInfo.nickName}]]</h2>
+        <h3 id="title" style="margin: 1.6em 0em" th:inline="text">[[${userInfo.signature}]]</h3>
+        <span id="location" th:inline="text"><i class="fa fa-map-marker"></i>[[${userInfo.address}]]</span>
+    </div>
+    <div class="article-info profile-block" th:if="${userInfo!=null}">
+        <div class="article-info-block">
+            <span th:inline="text">文章 [[${articleCount}]]</span>
+        </div>
+        <div class="article-info-block">
+            <span th:inline="text">标签 [[${tagCount}]]</span>
+        </div>
+    </div>
+    <div class="profile-block social-links" th:if="${userInfo!=null}">
+        <table>
+            <tr>
+                <td>
+                    <a href="https://github.com/eumji025" target="_blank" title="github" class="tooltip">
+                        <i class="fa fa-github"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="http://git.oschina.net/eumji025" target="_blank" title="OSC" class="tooltip">
+                        <i class="fa fa-git"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="https://t.me/joinchat/AAAAAA0kpbYb6LmRfVNngg" target="_blank" title="telegram群组" class="tooltip">
+                        <i class="fa fa-telegram"></i>
+                    </a>
+                </td>
+
+                <td>
+                    <a href="https://plus.google.com/101626292151729327338" target="_blank" title="google+" class="tooltip">
+                        <i class="fa fa-google-plus"></i>
+                    </a>
+                </td>
+                <td>
+                    <a href="#" target="_blank" title="rss" class="tooltip">
+                        <i class="fa fa-rss"></i>
+                    </a>
+                </td>
+
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

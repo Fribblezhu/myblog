@@ -1,0 +1,41 @@
+<nav class="layout-menu-wrapper">
+  <div class="layout-menu-container">
+    <ul class="layout-menu">
+      <li class="nav-item" has-permission role="ROLE_USER">
+        <a class="nav-link" routerLinkActive="active-menuitem" ><i class="fa fa-fw fa-home"></i>
+          <span>我的信息</span></a>
+      </li>
+      <li class="divider"></li>
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active-menuitem"><i class="fa fa-fw fa-edit"></i>
+          <span>最近文档</span></a>
+      </li>
+      <div *ngIf = "files">
+        <div *ngFor= "let file of files">
+          <li class="nav-item nav-dropdown" routerLinkActive="open">
+            <a class="nav-link nav-dropdown-toggle" href="#">
+              <i class="fa fa-fw fa-bars"></i>
+              <span>{{file.name}}</span>
+              <i class="fa fa-fw fa-fw fa-angle-down nav-dropdown-icon"></i>
+            </a>
+            <div *ngFor ="let item of file.items">
+              <ul class="nav-dropdown-items">
+                <li class="nav-item">
+                  <a class="nav-link" routerLinkActive="active-menuitem">
+                    <i class="fa fa-fw fa-table"></i> <span>{{item.name}}</span> </a>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </div>
+      </div>
+    </ul>
+  </div>
+</nav>
+<!-- 文件栏 -->
+<nav class = "layout-menu-line">
+  <div >
+
+  </div>
+
+</nav>

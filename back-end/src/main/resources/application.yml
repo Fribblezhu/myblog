@@ -1,0 +1,40 @@
+server:
+  port: 8080
+  compression:
+      enabled: true
+      mime-types: text/html,text/css,text/plain,application/json
+      min-response-size: 4096
+spring:
+  thymeleaf:
+    mode: HTML5
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: update
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      username: root
+      password: Fribblezwj21)$
+      url: jdbc:mysql://115.159.182.240:3306/blog?useUnicode=true&amp;characterEncoding=utf8&useSSL=false
+      hikari:
+        maximum-pool-size: 30
+        max-lifetime: 180000
+        driver-class-name: ${spring.datasource.driver-class-name}
+        username: ${spring.datasource.username}
+        password: ${spring.datasource.password}
+        jdbc-url: ${spring.datasource.url}
+logging:
+  config: classpath:log4j2.xml
+  level: debug
+  file: blog.log
+jasypt:
+   encryptor:
+      password: 123456
+jwt:
+  header: Authorization
+  secret: secretkey
+  expiration: 604800
+  route:
+    authentication:
+      path: login
+      refresh: refresh

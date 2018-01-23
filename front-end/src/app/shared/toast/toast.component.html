@@ -1,0 +1,7 @@
+<div [appStyles]="[styles.wrapper]">
+  <ul class="list-unstyled">
+    <div *ngFor="let toast of toasts.reverse()" [appStyles]="[styles.list]">
+      <div [appStyles]="toast.style">{{toast.msg}}</div>
+    </div>
+  </ul>
+</div>

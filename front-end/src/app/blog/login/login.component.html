@@ -1,0 +1,33 @@
+<body>
+<div class="top_div"></div>
+<div style="background: rgb(255, 255, 255); margin: -100px auto auto; border: 1px solid rgb(231, 231, 231); border-image: none; width: 400px; height: 200px; text-align: center;">
+  <div style="width: 165px; height: 96px; position: absolute;">
+    <div class="tou"></div>
+    <div class="initial_left_hand"  *ngIf = "!handing"></div>
+    <div class="initial_right_hand" *ngIf = "!handing"></div>
+    <div class="left_hand"  *ngIf = "handing"></div>
+    <div class="right_hand" *ngIf = "handing"></div>
+  </div>
+  <form [formGroup]="form" (ngSubmit) = "login()">
+  <p style="padding: 30px 0px 10px; position: relative;">
+    <span class="u_logo"></span>
+    <input class="ipt" type="text" formControlName="username" placeholder="请输入用户名或邮箱" value="">
+  </p>
+  <p style="position: relative;">
+    <span class="p_logo"></span>
+    <input class="ipt"  formControlName="password" (focus)="focus()" (blur)="blur()" type="password" placeholder="请输入密码">
+  </p>
+  </form>
+  <div style="height: 50px; line-height: 50px; margin-top: 30px; border-top: 1px solid rgb(231, 231, 231);">
+    <p style="margin: 0px 35px 20px 45px;">
+      <span style="float: left;">
+        <a class = "findPasswordBtn" (click)="findPassword()">忘记密码?</a>
+      </span>
+      <span style="float: right;">
+        <a class = "registerBtn" (click)="register()">注册 </a>
+        <a class = "loginBtn" (click)="login()">登录</a>
+      </span>
+    </p>
+  </div>
+</div>
+</body>

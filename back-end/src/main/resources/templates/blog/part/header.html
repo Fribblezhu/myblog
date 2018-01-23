@@ -1,0 +1,27 @@
+<!DOCTYPE  HTML>
+<html xmlns:th="http://www.thymeleaf.org" lang="zh">
+<body>
+<header id="header" th:fragment="header">
+    <div id = "header-main" class = "header-inner">
+        <div class = "outer">
+            <a href = "/" id = "logo">
+                <i class = "logo"/>
+                <span class = "site-title">Fribble</span>
+            </a>
+            <nav id = "main-nav">
+                <a class = "main-nav-link" href="/">首页</a>
+                <a class = "main-nav-link" href="/">最新文章</a>
+                <a class = "main-nav-link" href="/">最热文章</a>
+                <a class = "main-nav-link" th:href="'/user/index/'+ ${userInfo.userName}" th:if="${userInfo!=null}">我的主页</a>
+            </nav>
+            <div id="search-form-wrap">
+                <form class="search-form">
+                    <input type="text" class="ins-search-input search-form-input" placeholder="搜索"/>
+                    <button type="submit" class="search-form-submit"></button>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+</body>
+</html>
